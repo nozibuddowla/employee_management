@@ -31,3 +31,12 @@ def update_employee(request, employee_id):
         form = EmployeesForm(instance = employee)
 
     return render(request, 'update_employee.html', {'form': form})
+
+def delete_employee(request, employee_id):
+    employee = get_object_or_404(Employees, pk = employee_id)
+
+    if request.method == 'POST':
+        employee.delete()
+        return redirect('index')
+    
+    return render(request, 'delete_employee.html', {'employee': employee})
