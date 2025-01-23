@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Update Employee{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
 <form method="post">
@@ -15,7 +15,6 @@
             {% endfor %}
         </ul>
     {% endif %}
-    <button type="submit">Update Employees</button>
+    <button type="submit">Login</button>
 </form>
-<a href="{% url 'index' %}">Back to Employee List</a>
 {% endblock %}

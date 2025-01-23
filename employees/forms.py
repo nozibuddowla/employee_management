@@ -4,7 +4,7 @@ from .models import Employees
 class EmployeesForm(forms.ModelForm):
     class Meta:
         model = Employees
-        fields = ['name', 'address', 'phone_number', 'email', 'description']
+        fields = ['name', 'address', 'phone_number', 'email','salary', 'designation', 'description']
 
     def clean_phone_number(self):
         phone = self.cleaned_data['phone_number']

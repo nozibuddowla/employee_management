@@ -17,6 +17,7 @@ db.sqlite3
 .env
 
 # Ignore IDE files (e.g., VSCode)
+.idea/
 .vscode/
 
 # Ignore log files
@@ -25,3 +26,7 @@ db.sqlite3
 # Ignore static and media files if they are not committed to Git
 static/
 media/
+
+# Ignore any temporary files
+*.bak
+*.swp
