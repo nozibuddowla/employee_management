@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="table-responsive">
+        <table class="center">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Description</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                    <tr>
+                        <td>{{ employee.name }}</td>
+                        <td>{{ employee.designation }}</td>
+                        <td>{{ employee.description }}</td>
+                        <td>
+                            <a href=" {% url 'update_employee' employee.id %} ">Update</a>
+                        </td>
+                        <td>
+                            <a href=" {% url 'delete_employee' employee.id %} ">Delete</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td collapse="4">No employees found. Please add new employees.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
